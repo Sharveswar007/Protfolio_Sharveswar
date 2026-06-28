@@ -8,7 +8,7 @@ A high-performance, AI-integrated developer portfolio built with Astro, React, T
 
 ## Live Demonstration
 
-[View the Live Portfolio Here](https://sharveswar.com) *(Update this link to your actual live URL once deployed)*
+[View the Live Portfolio Here](https://protfolio-sharveswar.vercel.app) *(Update this link to your actual live URL once deployed)*
 
 ## Key Features
 

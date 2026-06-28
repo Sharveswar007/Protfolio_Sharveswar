@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sharveswar.com/sitemap-index.xml
+Sitemap: https://protfolio-sharveswar.vercel.app/sitemap-index.xml
