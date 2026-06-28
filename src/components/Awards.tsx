@@ -237,7 +237,7 @@ export default function Awards() {
                     >
                         {/* Blended Certification Image Overlay */}
                         <div 
-                            className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-40 mix-blend-overlay z-10 m-12" 
+                            className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-100 mix-blend-normal z-0 m-12" 
                             style={{ backgroundImage: `url(${item.logo})` }}
                         />
 
