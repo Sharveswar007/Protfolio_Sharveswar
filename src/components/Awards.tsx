@@ -242,7 +242,7 @@ export default function Awards() {
 
                         {/* Blended Certification Image Overlay */}
                         <div 
-                            className="absolute top-8 left-8 right-8 bottom-32 sm:bottom-40 bg-contain bg-center bg-no-repeat opacity-100 mix-blend-normal z-20 drop-shadow-[0_0_20px_rgba(255,255,255,0.7)] light:drop-shadow-[0_0_20px_rgba(0,0,0,0.5)] light:brightness-0 pointer-events-none transition-all duration-300" 
+                            className={`absolute top-8 left-8 right-8 bottom-32 sm:bottom-40 bg-contain bg-center bg-no-repeat opacity-100 mix-blend-normal z-20 drop-shadow-[0_0_20px_rgba(255,255,255,0.7)] light:drop-shadow-[0_0_20px_rgba(0,0,0,0.5)] pointer-events-none transition-all duration-300 ${item.logo.includes('hackathon') ? 'light:invert' : ''}`} 
                             style={{ backgroundImage: `url(${item.logo})` }}
                         />
 
