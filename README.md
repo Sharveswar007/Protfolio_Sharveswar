@@ -12,7 +12,7 @@ A high-performance, statically generated developer portfolio engineered to showc
 <div align="center">
   <img src="public/images/my_image.jpg" alt="Sharveswar Madasamy" width="200" height="266" style="border-radius: 12px; margin-bottom: 20px;">
   
-  **[Access the Live Production Environment](https://protfolio-sharveswar.vercel.app)**
+  **[Access the Live Production Environment](https://portfolio-sharveswar.vercel.app)**
 </div>
 
 <br>
@@ -65,8 +65,8 @@ To initialize a local development environment, execute the following commands:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Sharveswar007/Protfolio_Sharveswar.git
-   cd Protfolio_Sharveswar
+   git clone https://github.com/Sharveswar007/Portfolio_Sharveswar.git
+   cd Portfolio_Sharveswar
    ```
 
 2. **Install project dependencies:**

@@ -8,7 +8,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://protfolio-sharveswar.vercel.app',
+  site: 'https://portfolio-sharveswar.vercel.app',
   vite: {
     plugins: [tailwindcss()]
   },
