@@ -16,7 +16,7 @@ export const EXPERIENCES: Experience[] = [
     duration: "Recent",
     location: "Chennai, TN",
     description: [
-      "Contributed to a live, highly confidential enterprise project within the networking domain.",
+      "Contributed to a live, real-world enterprise project within the networking domain.",
       "Engineered and optimized high-performance message routing and data streaming using NATS JetStream.",
       "Conducted full-fledged system benchmarking and stress testing to ensure robust performance, latency optimization, and scalability."
     ],
