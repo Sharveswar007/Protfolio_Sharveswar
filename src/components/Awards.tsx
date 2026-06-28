@@ -235,15 +235,15 @@ export default function Awards() {
                             '--card-accent-fade-light': `${item.color}06`
                         } as React.CSSProperties}
                     >
-                        {/* Blended Certification Image Overlay */}
-                        <div 
-                            className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-100 mix-blend-normal z-0 m-12" 
-                            style={{ backgroundImage: `url(${item.logo})` }}
-                        />
-
                         {/* Theme-aware bottom gradient overlay */}
                         <div 
-                            className="absolute inset-0 z-20 bg-gradient-to-t from-black/85 via-black/30 light:from-cream-ivory/85 light:via-cream-ivory/30 to-transparent"
+                            className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-black/40 light:from-cream-ivory/90 light:via-cream-ivory/40 to-transparent pointer-events-none"
+                        />
+
+                        {/* Blended Certification Image Overlay */}
+                        <div 
+                            className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-100 mix-blend-normal z-20 m-12 drop-shadow-[0_0_20px_rgba(255,255,255,0.5)] light:drop-shadow-none pointer-events-none" 
+                            style={{ backgroundImage: `url(${item.logo})` }}
                         />
 
                         {/* Certificate content */}
