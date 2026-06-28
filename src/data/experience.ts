@@ -18,9 +18,10 @@ export const EXPERIENCES: Experience[] = [
     description: [
       "Contributed to a live, real-world enterprise project within the networking domain.",
       "Engineered and optimized high-performance message routing and data streaming using NATS JetStream.",
-      "Conducted full-fledged system benchmarking and stress testing to ensure robust performance, latency optimization, and scalability."
+      "Conducted full-fledged system benchmarking and stress testing to ensure robust performance, latency optimization, and scalability.",
+      "Utilized Linux, Rust, and Docker within a VirtualBox environment to streamline development and deployment."
     ],
-    skills: ["NATS JetStream", "Networking", "Benchmarking", "Performance Testing"]
+    skills: ["NATS JetStream", "Rust", "Docker", "Linux", "Networking", "Benchmarking"]
   },
   {
     id: 2,
