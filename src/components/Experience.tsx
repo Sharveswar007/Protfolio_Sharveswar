@@ -33,31 +33,23 @@ export default function Experience() {
           {/* Left: Decorative Sticky Timeline (Desktop) */}
           <div className="hidden md:block col-span-3 lg:col-span-4 relative">
             <div className="sticky top-40 w-full h-[60vh] flex justify-end pr-8">
-              <div className="absolute top-0 right-8 w-[2px] h-full bg-white/10 light:bg-black/10 rounded-full" />
+              {/* Background faint line */}
+              <div className="absolute top-0 right-[32px] w-[2px] h-full bg-white/10 light:bg-black/10 rounded-full" />
               
-              {/* Glowing animated SVG line */}
-              <svg className="absolute top-0 right-[31px] w-[4px] h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 4 100">
-                 <motion.line 
-                   x1="2" y1="0" x2="2" y2="100" 
-                   stroke="url(#neonGradient)" 
-                   strokeWidth="4" 
-                   strokeLinecap="round"
-                   style={{ pathLength: scrollYProgress }} 
-                   className="drop-shadow-[0_0_12px_rgba(56,189,248,0.8)]"
-                   vectorEffect="non-scaling-stroke"
-                 />
-                 <defs>
-                   <linearGradient id="neonGradient" x1="0" y1="0" x2="0" y2="1">
-                     <stop offset="0%" stopColor="#38bdf8" />
-                     <stop offset="50%" stopColor="#c084fc" />
-                     <stop offset="100%" stopColor="#f472b6" />
-                   </linearGradient>
-                 </defs>
-              </svg>
+              {/* Glowing animated line (Guaranteed to work across all browsers using scaleY) */}
+              <div className="absolute top-0 right-[32px] w-[2px] h-full rounded-full z-10 overflow-hidden">
+                <motion.div 
+                  className="w-full bg-gradient-to-b from-cyan-400 via-purple-500 to-pink-500 origin-top"
+                  style={{ 
+                    scaleY: scrollYProgress,
+                    height: '100%'
+                  }}
+                />
+              </div>
 
               {/* Glowing tracing dot */}
               <motion.div 
-                className="absolute right-[29px] w-2 h-2 rounded-full bg-white drop-shadow-[0_0_10px_rgba(255,255,255,1)] z-10"
+                className="absolute right-[29px] w-2 h-2 rounded-full bg-white drop-shadow-[0_0_10px_rgba(255,255,255,1)] z-20"
                 style={{ 
                     top: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
                     marginTop: "-4px"
