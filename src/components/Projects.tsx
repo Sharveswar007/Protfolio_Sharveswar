@@ -130,7 +130,7 @@ export default function Projects() {
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             className="text-3xl sm:text-4xl lg:text-5xl font-medium font-display text-cream-soft light:text-midnight-black whitespace-nowrap"
           >
-            What I did so far?
+            What I built so far?
           </motion.h2>
           <motion.div
             initial={{ scaleX: 0 }}
