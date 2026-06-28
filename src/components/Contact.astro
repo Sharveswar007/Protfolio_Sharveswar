@@ -1,0 +1,198 @@
+---
+---
+<section id="contact" class="sticky bottom-0 h-screen w-full bg-midnight-black light:bg-cream-ivory -z-10 flex items-center justify-center py-20 overflow-hidden">
+  <!-- Backdrop details -->
+  <div class="absolute inset-0 grid-bg opacity-5 pointer-events-none"></div>
+
+  <div class="max-w-6xl mx-auto px-6 w-full flex flex-col justify-center h-full relative z-10 pt-16">
+    <!-- Header -->
+    <div class="mb-12">
+      <span class="text-[10px] font-mono uppercase tracking-widest text-white/40 light:text-black/40">05 // Collaboration</span>
+      <h2 class="text-3xl sm:text-5xl font-bold font-display text-cream-soft light:text-midnight-black mt-2">
+        Let's Connect
+      </h2>
+    </div>
+
+    <!-- Contact Content Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+      <!-- Left: Contact Form -->
+      <div class="lg:col-span-7 bg-midnight-sub/80 light:bg-cream-offwhite/80 border border-white/5 light:border-black/5 p-6 sm:p-8 rounded-2xl backdrop-blur-md">
+        <form id="contact-form" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="flex flex-col space-y-2">
+              <label for="name" class="text-[10px] uppercase tracking-widest font-mono text-white/40 light:text-black/40">Your Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="user_name" 
+                required 
+                placeholder="Sharveswar M." 
+                class="px-4 py-3 rounded-lg bg-midnight-carbon/50 light:bg-cream-rose/50 border border-white/10 light:border-black/10 text-cream-soft light:text-midnight-black font-sans text-sm focus:outline-none focus:border-white/40 light:focus:border-black/40 transition-colors"
+              />
+            </div>
+            <div class="flex flex-col space-y-2">
+              <label for="email" class="text-[10px] uppercase tracking-widest font-mono text-white/40 light:text-black/40">Your Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="user_email" 
+                required 
+                placeholder="name@domain.com" 
+                class="px-4 py-3 rounded-lg bg-midnight-carbon/50 light:bg-cream-rose/50 border border-white/10 light:border-black/10 text-cream-soft light:text-midnight-black font-sans text-sm focus:outline-none focus:border-white/40 light:focus:border-black/40 transition-colors"
+              />
+            </div>
+          </div>
+          <div class="flex flex-col space-y-2">
+            <label for="message" class="text-[10px] uppercase tracking-widest font-mono text-white/40 light:text-black/40">Your Message</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="4" 
+              required 
+              placeholder="Hi, let's build something awesome..." 
+              class="px-4 py-3 rounded-lg bg-midnight-carbon/50 light:bg-cream-rose/50 border border-white/10 light:border-black/10 text-cream-soft light:text-midnight-black font-sans text-sm focus:outline-none focus:border-white/40 light:focus:border-black/40 transition-colors resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            id="submit-btn"
+            class="w-full flex items-center justify-center space-x-2 text-xs font-mono tracking-widest uppercase bg-cream-soft text-midnight-black light:bg-midnight-black light:text-cream-soft py-3.5 rounded-xl hover:opacity-95 transition-opacity font-bold"
+          >
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span>Send Message</span>
+          </button>
+        </form>
+
+        <!-- Success Toast Alert -->
+        <div 
+          id="success-message" 
+          class="hidden mt-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center space-x-3 text-xs font-mono"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <span>Message sent successfully! I'll get back to you shortly.</span>
+        </div>
+      </div>
+
+      <!-- Right: Contact Information / Social Links -->
+      <div class="lg:col-span-5 flex flex-col space-y-8 select-none">
+        <div>
+          <h3 class="text-lg font-bold font-display text-cream-soft light:text-midnight-black">Connect Directly</h3>
+          <p class="text-xs text-white/40 light:text-black/40 font-mono mt-1">Feel free to reach out via socials or direct mail.</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- LinkedIn -->
+          <a 
+            href="https://www.linkedin.com/in/sharveswar-madasamy" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="flex items-center space-x-4 p-4 rounded-xl border border-white/5 light:border-black/5 bg-midnight-sub/40 light:bg-cream-offwhite/40 hover:bg-midnight-carbon/60 light:hover:bg-cream-rose/60 transition-all group"
+          >
+            <div class="p-2.5 rounded-lg bg-white/5 light:bg-black/5 text-white/45 light:text-black/45 group-hover:text-cream-soft light:group-hover:text-midnight-black transition-colors">
+              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold font-display text-cream-soft light:text-midnight-black">LinkedIn</h4>
+              <p class="text-[10px] font-mono text-white/30 light:text-black/30">sharveswar-madasamy</p>
+            </div>
+          </a>
+
+          <!-- GitHub -->
+          <a 
+            href="https://github.com/Sharveswar007" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="flex items-center space-x-4 p-4 rounded-xl border border-white/5 light:border-black/5 bg-midnight-sub/40 light:bg-cream-offwhite/40 hover:bg-midnight-carbon/60 light:hover:bg-cream-rose/60 transition-all group"
+          >
+            <div class="p-2.5 rounded-lg bg-white/5 light:bg-black/5 text-white/45 light:text-black/45 group-hover:text-cream-soft light:group-hover:text-midnight-black transition-colors">
+              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold font-display text-cream-soft light:text-midnight-black">GitHub</h4>
+              <p class="text-[10px] font-mono text-white/30 light:text-black/30">Sharveswar007</p>
+            </div>
+          </a>
+
+          <!-- Direct Email Link -->
+          <a 
+            href="mailto:msharveswar220@gmail.com" 
+            class="flex items-center space-x-4 p-4 rounded-xl border border-white/5 light:border-black/5 bg-midnight-sub/40 light:bg-cream-offwhite/40 hover:bg-midnight-carbon/60 light:hover:bg-cream-rose/60 transition-all group"
+          >
+            <div class="p-2.5 rounded-lg bg-white/5 light:bg-black/5 text-white/45 light:text-black/45 group-hover:text-cream-soft light:group-hover:text-midnight-black transition-colors">
+              <svg class="w-[18px] h-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <div>
+              <h4 class="text-xs font-bold font-display text-cream-soft light:text-midnight-black">Email</h4>
+              <p class="text-[10px] font-mono text-white/30 light:text-black/30">msharveswar220@gmail.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EmailJS Integration Script -->
+<script>
+  import emailjs from '@emailjs/browser';
+
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const successMsg = document.getElementById('success-message') as HTMLDivElement;
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Disable submit button and update text
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>Sending...</span>`;
+    }
+
+    // ==========================================
+    // EMAILJS CONFIGURATION
+    // Replace these values with your EmailJS credentials
+    // ==========================================
+    const SERVICE_ID = 'YOUR_SERVICE_ID';
+    const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+    // Verify if keys are configured
+    if (SERVICE_ID === 'YOUR_SERVICE_ID' || TEMPLATE_ID === 'YOUR_TEMPLATE_ID' || PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+      console.warn('EmailJS has not been configured with actual credentials yet. Simulating success...');
+      
+      // Simulate API call for local testing
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Send Message</span>`;
+        }
+        successMsg?.classList.remove('hidden');
+        form.reset();
+        
+        setTimeout(() => successMsg?.classList.add('hidden'), 5000);
+      }, 1000);
+      return;
+    }
+
+    // Trigger EmailJS email dispatch
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, PUBLIC_KEY)
+      .then(() => {
+        successMsg?.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => successMsg?.classList.add('hidden'), 5000);
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        alert('Failed to send email. Please try reaching out directly via msharveswar220@gmail.com.');
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = `<svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg><span>Send Message</span>`;
+        }
+      });
+  });
+</script>

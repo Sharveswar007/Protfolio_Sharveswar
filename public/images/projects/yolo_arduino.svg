@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a" />
+      <stop offset="100%" stop-color="#292929" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g4)" rx="16" />
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-dasharray="2 8" stroke-width="1">
+    <line x1="0" y1="50" x2="800" y2="50" />
+    <line x1="0" y1="150" x2="800" y2="150" />
+    <line x1="0" y1="250" x2="800" y2="250" />
+    <line x1="0" y1="350" x2="800" y2="350" />
+    <line x1="0" y1="450" x2="800" y2="450" />
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="500" y1="0" x2="500" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+    <line x1="700" y1="0" x2="700" y2="500" />
+  </g>
+  <!-- Camera Frame -->
+  <rect x="60" y="60" width="460" height="380" rx="6" fill="#141414" fill-opacity="0.9" stroke="#ffffff" stroke-opacity="0.1" />
+  <circle cx="290" cy="80" r="4" fill="#ffffff" opacity="0.3" />
+  <!-- Bounding Boxes -->
+  <!-- Target 1: Smartphone -->
+  <rect x="120" y="140" width="120" height="200" fill="none" stroke="#ffffff" stroke-width="2" />
+  <rect x="120" y="115" width="80" height="25" fill="#ffffff" />
+  <text x="125" y="132" fill="#000000" font-family="sans-serif" font-weight="bold" font-size="11">electronic 0.94</text>
+  <!-- Target 2: Laptop -->
+  <rect x="280" y="180" width="200" height="180" fill="none" stroke="#ffffff" stroke-width="2" stroke-opacity="0.5" />
+  <rect x="280" y="155" width="80" height="25" fill="#ffffff" fill-opacity="0.5" />
+  <text x="285" y="172" fill="#000000" font-family="sans-serif" font-weight="bold" font-size="11">laptop 0.89</text>
+  <!-- Target crosshair -->
+  <path d="M 290,250 L 290,230 M 290,250 L 290,270 M 290,250 L 270,250 M 290,250 L 310,250" stroke="#ffffff" stroke-width="2" />
+  <!-- Side panel: Arduino logic -->
+  <rect x="540" y="60" width="200" height="380" rx="6" fill="#0a0a0a" stroke="#ffffff" stroke-opacity="0.1" />
+  <text x="560" y="100" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold">Arduino Uno</text>
+  <!-- Pin indicators -->
+  <rect x="560" y="130" width="160" height="30" rx="4" fill="#1f1f1f" />
+  <circle cx="580" cy="145" r="5" fill="#27c93f" />
+  <text x="600" y="149" fill="#ffffff" font-family="monospace" font-size="11">PIN 13: HIGH</text>
+  <rect x="560" y="170" width="160" height="30" rx="4" fill="#1f1f1f" />
+  <circle cx="580" cy="185" r="5" fill="#ffffff" opacity="0.3" />
+  <text x="600" y="189" fill="#ffffff" font-family="monospace" font-size="11">PIN 12: LOW</text>
+  <!-- PySerial logo/connector -->
+  <path d="M 500,250 C 510,230 530,230 540,250" fill="none" stroke="#ffffff" stroke-width="2" stroke-dasharray="4 4" />
+  <text x="640" y="415" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10" opacity="0.4">PySerial | 115200 baud</text>
+</svg>

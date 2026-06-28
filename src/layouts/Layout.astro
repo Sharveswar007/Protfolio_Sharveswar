@@ -1,0 +1,130 @@
+---
+import '../styles/global.css';
+import CustomCursor from '../components/CustomCursor';
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+	title: string;
+	description?: string;
+	image?: string;
+	url?: string;
+}
+
+const { 
+	title, 
+	description = "Sharveswar Madasamy - AI Integrated Full Stack Developer Portfolio", 
+	image = "/favicon.svg", 
+	url = Astro.url ? Astro.url.href : "https://sharveswar.com" 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="canonical" href={url} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.url ? Astro.url.origin : "https://sharveswar.com")} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL(image, Astro.url ? Astro.url.origin : "https://sharveswar.com")} />
+
+		<!-- Font Preloads -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+		<title>{title}</title>
+		<!-- Initial theme script to prevent layout shift or flashing -->
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+				// Default to dark mode (Elegant Midnight)
+				return 'dark';
+			})();
+		
+			if (theme === 'light') {
+				document.documentElement.classList.add('light');
+				document.documentElement.classList.remove('dark');
+			} else {
+				document.documentElement.classList.add('dark');
+				document.documentElement.classList.remove('light');
+			}
+		</script>
+	</head>
+	<body class="bg-midnight-black light:bg-cream-ivory text-cream-soft light:text-midnight-black transition-colors duration-500">
+		<CustomCursor client:load />
+		<Navbar />
+		<main class="relative z-10">
+			<slot />
+		</main>
+
+		<!-- Lenis Smooth Scrolling Script -->
+		<script>
+			import Lenis from 'lenis';
+
+			// Initialize Lenis
+			const lenis = new Lenis({
+				duration: 1.2,
+				easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+				touchMultiplier: 1.5,
+				infinite: false,
+			});
+
+			function raf(time: number) {
+				lenis.raf(time);
+				requestAnimationFrame(raf);
+			}
+
+			requestAnimationFrame(raf);
+
+			// Expose lenis globally for component triggers
+			window.lenis = lenis;
+
+			// Handle smooth scrolling for hash anchors
+			document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					const href = this.getAttribute('href');
+					if (!href || href === '#') return;
+					
+					const targetElement = document.querySelector(href);
+					if (targetElement) {
+						e.preventDefault();
+						if (window.lenis) {
+							window.isProgrammaticScroll = true;
+							window.lenis.start(); // Unlock scroll engine if trapped inside Awards
+							window.lenis.scrollTo(targetElement, { 
+								offset: 0,
+								onComplete: () => {
+									window.isProgrammaticScroll = false;
+								}
+							});
+						} else {
+							targetElement.scrollIntoView({ behavior: 'smooth' });
+						}
+					}
+				});
+			});
+
+			// Hardware-level overrides to prevent programmatic scroll lock from getting permanently stuck
+			// The absolute instant a user interacts with the page naturally, force programmatic state off
+			window.addEventListener('wheel', () => { window.isProgrammaticScroll = false; }, { passive: true, capture: true });
+			window.addEventListener('touchstart', () => { window.isProgrammaticScroll = false; }, { passive: true, capture: true });
+		</script>
+	</body>
+</html>

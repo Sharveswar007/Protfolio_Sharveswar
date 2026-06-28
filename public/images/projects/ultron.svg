@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a" />
+      <stop offset="100%" stop-color="#1f1f1f" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g2)" rx="16" />
+  <!-- Tech lines background -->
+  <path d="M 100,0 L 200,500 M 300,0 L 400,500 M 500,0 L 600,500 M 700,0 L 800,500" stroke="#ffffff" stroke-opacity="0.03" stroke-width="2" />
+  <path d="M 0,100 L 800,100 M 0,250 L 800,250 M 0,400 L 800,400" stroke="#ffffff" stroke-opacity="0.03" stroke-width="2" />
+  <!-- UI Window -->
+  <rect x="40" y="40" width="720" height="420" rx="8" fill="#141414" stroke="#ffffff" stroke-opacity="0.1" />
+  <circle cx="60" cy="60" r="6" fill="#ffffff" opacity="0.2" />
+  <circle cx="76" cy="60" r="6" fill="#ffffff" opacity="0.2" />
+  <circle cx="92" cy="60" r="6" fill="#ffffff" opacity="0.2" />
+  <!-- Event Hero Mock -->
+  <text x="400" y="150" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="36" font-weight="900" letter-spacing="4">ULTRON 9.0</text>
+  <text x="400" y="180" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" opacity="0.5" letter-spacing="2">FUTURIX TECH CLUB EVENT</text>
+  <!-- Ticket/Badge design -->
+  <rect x="250" y="220" width="300" height="150" rx="10" fill="#000000" stroke="#ffffff" stroke-opacity="0.15" />
+  <!-- Ticket notches -->
+  <circle cx="250" cy="295" r="10" fill="#141414" />
+  <circle cx="550" cy="295" r="10" fill="#141414" />
+  <!-- Dotted line in ticket -->
+  <line x1="320" y1="220" x2="320" y2="370" stroke="#ffffff" stroke-opacity="0.2" stroke-dasharray="5 5" />
+  <!-- QR Code mockup -->
+  <rect x="270" y="270" width="40" height="40" fill="#ffffff" opacity="0.8" />
+  <rect x="275" y="275" width="10" height="10" fill="#000000" />
+  <rect x="295" y="275" width="10" height="10" fill="#000000" />
+  <rect x="275" y="295" width="10" height="10" fill="#000000" />
+  <!-- Ticket text -->
+  <text x="340" y="260" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">ADMIT ONE</text>
+  <text x="340" y="285" fill="#ffffff" font-family="sans-serif" font-size="11" opacity="0.4">SRM IST KTR campus</text>
+  <text x="340" y="340" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold" letter-spacing="1">18 DEVELOPERS</text>
+  <!-- Buttons -->
+  <rect x="350" y="395" width="100" height="30" rx="15" fill="#ffffff" fill-opacity="0.9" />
+  <text x="400" y="414" text-anchor="middle" fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold">REGISTER</text>
+</svg>

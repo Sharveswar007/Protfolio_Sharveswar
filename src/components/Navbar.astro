@@ -1,0 +1,166 @@
+---
+---
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-midnight-black/40 backdrop-blur-xl light:bg-cream-ivory/40 light:border-black/5">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <!-- Left Logo / Name -->
+    <a href="#home" class="group flex flex-col">
+      <span class="text-lg font-bold tracking-tight text-cream-soft light:text-midnight-black font-display transition-colors">
+        Sharveswar Madasamy
+      </span>
+      <span class="text-[9px] uppercase tracking-widest text-white/40 light:text-black/40 group-hover:text-white/60 light:group-hover:text-black/60 transition-colors font-mono">
+        AI &amp; Full Stack
+      </span>
+    </a>
+
+    <!-- Center Navigation Links (Desktop) -->
+    <nav class="hidden md:flex items-center space-x-8">
+      {['home', 'about', 'skills', 'projects', 'awards', 'contact'].map((item) => (
+        <a 
+          href={`/#${item}`} 
+          class="text-xs uppercase tracking-widest text-white/50 light:text-black/50 hover:text-cream-soft light:hover:text-midnight-black transition-colors font-mono relative py-2 group"
+        >
+          {item}
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-cream-soft light:bg-midnight-black transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center space-x-4 md:space-x-6">
+      <!-- Live Clock -->
+      <div class="hidden lg:flex items-center space-x-2 text-[11px] font-mono text-white/40 light:text-black/40">
+        <span id="nav-clock">Loading...</span>
+      </div>
+
+      <!-- Theme Switch Toggle Button -->
+      <button 
+        id="theme-toggle" 
+        class="relative w-12 h-6 rounded-full bg-midnight-carbon light:bg-cream-rose border border-white/10 light:border-black/10 flex items-center p-1 transition-all duration-300"
+        aria-label="Toggle theme"
+      >
+        <span class="sr-only">Toggle Theme</span>
+        <!-- Handle circle -->
+        <span 
+          id="theme-toggle-handle"
+          class="w-4 h-4 rounded-full bg-cream-soft light:bg-midnight-black shadow flex items-center justify-center transform transition-transform duration-300 translate-x-0"
+        >
+          <!-- Small inner detail -->
+          <span class="w-1.5 h-1.5 rounded-full bg-midnight-black light:bg-cream-soft opacity-30"></span>
+        </span>
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col items-center justify-center w-10 h-10 space-y-1.5" aria-label="Toggle mobile menu">
+        <span class="w-6 h-0.5 bg-cream-soft light:bg-midnight-black transition-transform duration-300 origin-center"></span>
+        <span class="w-6 h-0.5 bg-cream-soft light:bg-midnight-black transition-opacity duration-300"></span>
+        <span class="w-6 h-0.5 bg-cream-soft light:bg-midnight-black transition-transform duration-300 origin-center"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Full-Screen Overlay Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-midnight-black/95 light:bg-cream-ivory/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-500 pt-20">
+  <nav class="flex flex-col items-center space-y-8">
+    {['home', 'about', 'skills', 'projects', 'awards', 'contact'].map((item) => (
+      <a 
+        href={`/#${item}`} 
+        class="mobile-nav-link text-3xl font-display font-bold uppercase tracking-widest text-cream-soft light:text-midnight-black hover:text-orange-500 light:hover:text-orange-500 transition-colors"
+      >
+        {item}
+      </a>
+    ))}
+  </nav>
+</div>
+
+<script>
+  // Live Ticker Clock Script
+  function updateTime() {
+    const clockEl = document.getElementById('nav-clock');
+    if (!clockEl) return;
+    
+    const now = new Date();
+    const options: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' };
+    const dateStr = now.toLocaleDateString('en-US', options);
+    const timeStr = now.toLocaleTimeString('en-US', { hour12: false });
+    
+    clockEl.textContent = `${dateStr} | ${timeStr}`;
+  }
+  
+  setInterval(updateTime, 1000);
+  updateTime();
+
+  // Dark/Light Theme Switch Handler
+  const toggleBtn = document.getElementById('theme-toggle');
+  const toggleHandle = document.getElementById('theme-toggle-handle');
+
+  function updateToggleUI(theme: string) {
+    if (theme === 'light') {
+      toggleHandle?.classList.add('translate-x-6');
+      toggleHandle?.classList.remove('translate-x-0');
+    } else {
+      toggleHandle?.classList.add('translate-x-0');
+      toggleHandle?.classList.remove('translate-x-6');
+    }
+  }
+
+  // Set initial state of the switch handle
+  const currentTheme = document.documentElement.classList.contains('light') ? 'light' : 'dark';
+  updateToggleUI(currentTheme);
+
+  toggleBtn?.addEventListener('click', () => {
+    const isLight = document.documentElement.classList.toggle('light');
+    const targetTheme = isLight ? 'light' : 'dark';
+    
+    if (isLight) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    
+    updateToggleUI(targetTheme);
+  });
+
+  // Mobile Menu Logic
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+    if (!mobileMenuBtn || !mobileMenu) return;
+
+    const spans = mobileMenuBtn.querySelectorAll('span');
+    
+    if (isMenuOpen) {
+      // Open menu
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+      mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+      // Animate hamburger to X
+      spans[0].classList.add('translate-y-2', 'rotate-45');
+      spans[1].classList.add('opacity-0');
+      spans[2].classList.add('-translate-y-2', '-rotate-45');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    } else {
+      // Close menu
+      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+      // Animate X to hamburger
+      spans[0].classList.remove('translate-y-2', 'rotate-45');
+      spans[1].classList.remove('opacity-0');
+      spans[2].classList.remove('-translate-y-2', '-rotate-45');
+      document.body.style.overflow = ''; // Restore scrolling
+    }
+  }
+
+  mobileMenuBtn?.addEventListener('click', toggleMenu);
+
+  // Close menu when a link is clicked
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (isMenuOpen) toggleMenu();
+    });
+  });
+</script>

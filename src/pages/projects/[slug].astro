@@ -1,0 +1,147 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { PROJECTS } from '../../data/projects';
+
+export function getStaticPaths() {
+  return PROJECTS.map(project => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<Layout 
+  title={`${project.title} | Projects`}
+  description={project.description.slice(0, 160) + (project.description.length > 160 ? '...' : '')}
+  image={project.image}
+  url={`https://sharveswar.com/projects/${project.slug}`}
+>
+  <div class="min-h-screen bg-midnight-black light:bg-cream-ivory text-cream-soft light:text-midnight-black pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-6 w-full flex flex-col">
+      
+      {/* Header Section */}
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+        <div>
+          <a href="/#projects" class="text-sm font-mono text-orange-500 hover:text-orange-400 mb-6 inline-flex items-center gap-2 transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m15 18-6-6 6-6"/>
+            </svg>
+            Back to Projects
+          </a>
+          <h1 class="text-5xl md:text-7xl font-black font-display tracking-tight text-white light:text-midnight-black mt-4 mb-2">
+            {project.title}
+          </h1>
+          <p class="text-lg md:text-xl font-mono text-white/60 light:text-black/60 uppercase tracking-widest">
+            {project.subtitle}
+          </p>
+        </div>
+
+        {/* Links */}
+        <div class="flex flex-col gap-3">
+          {project.github && project.github !== "#" && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-3 text-xs md:text-sm font-mono tracking-widest uppercase bg-white text-black px-6 py-3 md:py-4 rounded-full hover:scale-105 transition-transform w-full md:w-48"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                <path d="M9 18c-4.51 2-5-2-7-2" />
+              </svg>
+              View Code
+            </a>
+          )}
+          {project.live && project.live !== "#" && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-3 text-xs md:text-sm font-mono tracking-widest uppercase border border-white/20 light:border-black/20 text-white light:text-black px-6 py-3 md:py-4 rounded-full hover:bg-white/10 light:hover:bg-black/5 hover:scale-105 transition-all w-full md:w-48"
+            >
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15 3h6v6" />
+                <path d="M10 14 21 3" />
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              </svg>
+              Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+
+      {/* Main Media Showcase */}
+      <div class="w-full aspect-video rounded-3xl overflow-hidden bg-black border border-white/10 shadow-2xl relative mb-20">
+        {project.mediaType === 'video' ? (
+          <video
+            src={project.image}
+            autoplay
+            loop
+            muted
+            playsinline
+            class="w-full h-full object-contain md:object-cover scale-100 md:scale-[1.15]"
+          />
+        ) : (
+          <img
+            src={project.image}
+            alt={`${project.title} Cover`}
+            class="w-full h-full object-contain md:object-cover scale-100 md:scale-[1.15]"
+          />
+        )}
+
+        {/* Bottom Right Logo Overlay (Positioned to cover video watermark) - Hidden on Mobile */}
+        <div class="hidden md:block absolute bottom-8 right-8 z-20 w-32 h-32 rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black/40 backdrop-blur-md pointer-events-none">
+          <img src={project.logo} alt={`${project.title} logo`} class="w-full h-full object-cover" />
+        </div>
+      </div>
+
+      {/* Details Grid */}
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+        
+        {/* Left Column: Description */}
+        <div class="lg:col-span-8">
+          <h2 class="text-sm font-mono text-white/40 light:text-black/40 uppercase tracking-widest mb-6 border-b border-white/10 light:border-black/10 pb-4">
+            Project Overview
+          </h2>
+          <p class="text-lg md:text-xl leading-relaxed text-white/80 light:text-black/80 font-sans">
+            {project.description}
+          </p>
+
+          <h2 class="text-sm font-mono text-white/40 light:text-black/40 uppercase tracking-widest mt-16 mb-6 border-b border-white/10 light:border-black/10 pb-4">
+            Key Features
+          </h2>
+          <ul class="space-y-4">
+            {project.features.map(feature => (
+              <li class="flex items-start gap-4">
+                <div class="w-1.5 h-1.5 rounded-full bg-orange-500 mt-2 flex-shrink-0" />
+                <span class="text-base md:text-lg text-white/70 light:text-black/70">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right Column: Tech Stack */}
+        <div class="lg:col-span-4">
+          <div class="sticky top-32 p-8 rounded-3xl bg-white/5 light:bg-black/5 border border-white/10 light:border-black/10">
+            <h2 class="text-sm font-mono text-white/40 light:text-black/40 uppercase tracking-widest mb-6">
+              Technologies Used
+            </h2>
+            <div class="flex flex-wrap gap-3">
+              {project.technologies.map(tech => (
+                <span class="px-4 py-2 rounded-full border border-white/10 light:border-black/10 bg-white/5 light:bg-black/5 text-sm font-mono text-white/90 light:text-black/90">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</Layout>
