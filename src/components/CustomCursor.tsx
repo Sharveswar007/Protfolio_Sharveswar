@@ -8,10 +8,9 @@ export default function CustomCursor() {
   const mouseX = useMotionValue(-100);
   const mouseY = useMotionValue(-100);
 
-  // Springs for the main arrow pointer cursor (fast and precise)
-  const arrowSpringConfig = { damping: 45, stiffness: 450, mass: 0.2 };
-  const cursorX = useSpring(mouseX, arrowSpringConfig);
-  const cursorY = useSpring(mouseY, arrowSpringConfig);
+  // Use raw motion values for the main arrow pointer so it responds instantly with zero latency
+  const cursorX = mouseX;
+  const cursorY = mouseY;
 
   // Springs for the floating target (slower and more fluid/sluggish)
   const targetSpringConfig = { damping: 22, stiffness: 85, mass: 0.55 };
