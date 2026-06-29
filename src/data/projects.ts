@@ -166,22 +166,22 @@ export const PROJECTS: Project[] = [
     ]
   },
   {
-    slug: "typeai-plus",
-    title: "TypeAI Plus",
-    subtitle: "AI Typing Mastery",
-    github: "https://github.com/Sharveswar007/TypeAI-plus",
+    slug: "type-plus",
+    title: "Type plus",
+    subtitle: "Modern Typing Test Dashboard",
+    github: "https://github.com/Sharveswar007/Type-plus",
     live: "#",
     image: "/videos/TypeAI Plus.mp4",
     logo: "/images/logo/typeai_logo.png",
     mediaType: "video",
-    description: "TypeAI-plus is an AI-driven web application designed to unleash the power of typing mastery. It provides a fast, fun, and intelligent typing experience by adapting to the user's skill level and providing real-time feedback and dynamic text generation to keep practice sessions engaging.",
-    technologies: ["Python", "React", "AI Models", "WebSockets"],
+    description: "Type plus is a premium, pure-frontend typing test application built for developers and typists who demand a clean, distraction-free environment. Featuring a deep obsidian and frosted glassmorphic design, it offers a highly focused typing experience with real, grammatically structured paragraphs and instant statistical feedback.",
+    technologies: ["HTML5", "Vanilla CSS3", "Vanilla JavaScript", "Chart.js", "DummyJSON API"],
     features: [
-      "AI-generated adaptive typing prompts.",
-      "Real-time WPM tracking and error analysis.",
-      "Dynamic difficulty scaling based on user performance.",
-      "Modern, distraction-free minimalist interface.",
-      "Gamified progression and mastery systems."
+      "Modern Dashboard interface with frosted glassmorphism.",
+      "Meaningful paragraphs fetched dynamically via API.",
+      "Offline fallback cache for uninterrupted typing sessions.",
+      "Real-time visual keystroke analytics and error tracking.",
+      "Second-by-second WPM progression charts using Chart.js."
     ]
   },
   {
