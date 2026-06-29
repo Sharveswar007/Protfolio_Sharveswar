@@ -3,7 +3,9 @@ export interface Project {
   title: string;
   subtitle: string;
   github: string;
+  github2?: string;
   live: string;
+  live2?: string;
   image: string;
   logo: string;
   mediaType: 'image' | 'video'; // To support rendering the video instead of an image
@@ -56,7 +58,9 @@ export const PROJECTS: Project[] = [
     title: "HIRENEX",
     subtitle: "AI-Powered Recruitment Ecosystem",
     github: "https://github.com/Sharveswar007/HR-portal",
+    github2: "https://github.com/Sharveswar007/Candidate-Portal",
     live: "https://hirenex-hr.vercel.app/login",
+    live2: "#",
     image: "/videos/HIRENEX.mp4",
     logo: "/images/logo/hirenex_logo.png",
     mediaType: "video",
